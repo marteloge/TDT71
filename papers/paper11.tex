@@ -1,0 +1,66 @@
+\chapter*{Scripting vs. Emergence}
+
+\section*{Introduction}
+
+  \begin{itemize}
+    \item Scripting and emergence is two approaches to designing game environments.
+    \item {\bf Scripting:} the majority of current games are implemented with scripting. Game developer predefines specific paths and interactions that the player will thake throughout the game. Relies on a given designers ideas of what is consistent and fun. Environment, objects and agents in scripted games are limited to narrow and static behaviour that the developer has predefined. 
+    \item {\bf Emergence:} Is a general rule-based system that allow the creation of gameplay out of combinations of existing game elements with globally defined, consistent characteristics and behaviour. A globally designed game system provides rules and bounderies for player interaction, rather than prescripted paths. 
+  \end{itemize}
+
+\section*{Considerations for game developers}
+
+  \subsubsection*{Developers considerations for scripted systems}
+    \begin{enumerate}
+      \item {\bf Effort in designing, implementing, and testing:} possible courses pf action that a player can take needs to be manually set up by the developers.
+      \item {\bf Effort in modifying and extending:} scripted games scale poorly. For a bullet to break a window, there needs to be a direct relationship between the gun entity and the window entity. Fixing a bug in the system requires each instance of a game element to be visited and reconfigured manually. 
+      \item {\bf Level of creative control for game developers:} The designers have full control over the game!
+      \item {\bf Uncertainty and quality assurance:} Nothing occurs that was not intended or planned by the game developer. There is no uncertainty or unexpected events in the game. 
+      \item {\bf Ease of feedback and direction to players:} feedback and directions to players is simple in scripted systems. As the desired outcome is known, it is straightforward to give players feedback on their success at performing actions or fulfilling goals. 
+    \end{enumerate}
+
+  \subsubsection*{Developers considerations for emergent systems}
+    \begin{enumerate}
+      \item {\bf Effort in designing, implementing, and testing:} creating emergent games involves designing types of objects and interactions, rather than specific ones. Rather than having a specific gun able to break a specific window, there is an additional layer of abstraction that allows a gun to break anything made of glass. (set of rules describing relationship between entities).
+      \item {\bf Effort in modifying and extending:} designes scales well and is easily extended. Changes are made to objects rather than each particular instance of an object that needs to be changed. 
+      \item {\bf Level of creative control for game developers:} loss of creative control for the game designer. Controlling the flow of game and telling a specific story is not as straightforward in an emergent system. 
+      \item {\bf Uncertainty and quality assurance:} emergence also introduce uncertainty, making game behaviour possible that developers have never thought about.
+      \item {\bf Ease of feedback and direction to players:} players have a greater need for feedback on the outcome and success of their actions in emergent systems, as the openness of the game world gives rise to more possibilities for action. 
+    \end{enumerate}
+
+\section*{Considerations for game players}
+  
+  \subsubsection*{Consistency and Immersion}
+
+    Inconsistencies in games remind the player that it is just a game, introducing disbelief. The viewer of the player of the game is transported back to the real world, reminded disappointed that their experience was fake. Emergent systems have the potential to be used to create more consistent game worlds. For example, the player can assume that a bullet can affect anything that is damageable.
+
+  \subsubsection*{Intuitiveness and Learning}
+
+    Sometimes the character can climb on objects, sometimes not. Glass breaks sometimes, but sometimes they dont. It is necessary to relearn the physics of the world like a child. The intuitiveness of interactions in the game world can be partly attributed to how the interactions correspond to the interactions with the same objects in the real world. Unintuitiveness can confuse and frustrate the player. It is easier to create objects that behave and interact in more natural ways in emergent games. 
+
+    An important benefit of making game worlds more intuitive is that they become easier to learn. When learning curve is decreased, the player can spend more time playing and using less time learning. 
+
+  \subsubsection*{Emerget gameplay and player expression}
+
+    Degree of freedom of player expression.
+    When making scripted game worlds, the game is played in the exact way it was specified, which might not accomodate player creativity. Emergent gameplay allows players to solve game problems by using own strategies that was not made by the designers. 
+
+    The major difference between scripting and emergence is that emergence focuses on what the player wants to do, wheras scripting focuses on what the designer wants the player to do. 
+
+\section*{Techniques for scripting and emergence in games}
+
+  \subsubsection*{Techniques for scriting game worlds}
+
+    \begin{itemize}
+      \item {\bf Finite State Machines (FSM):}
+      \item {\bf Scripting Languages}
+    \end{itemize}
+
+  \subsubsection*{Techniques for emergence in game worlds}
+
+    \begin{itemize}
+      \item {\bf Flocking:} Is a technique for simulating natural behaviours for a group of entities. There are three different forms of steering behaviour: Separation, cohesion, alignment. 
+      \item {\bf Cellular Automata:}
+      \item {\bf Neural Networks:} are a machine learning technique inspired by the human brain. Can use a training set for building a desired behaviour. Can either train online of offline. 
+      \item {\bf Evolutionary Algorithms:} Evolves a solution to a problem in a similar way to natural selection and evaluation. 
+    \end{itemize}
