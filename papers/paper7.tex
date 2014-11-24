@@ -1,17 +1,34 @@
-\chapter*{Game Development - Harder Than You Think}
+\chapter*{7) Game Development - Harder Than You Think}
     
   \section*{Introduction}
   The hardest part of making a game has always been the engineering. In past times, game engineering was mainly about low-level optimization - writing code that would run quickly on the target computer, leveraging clever tricks whenever possible. But in the past ten years, games have ballooned in complexity. 
 
   \section*{Project size and complexity}
+  Game development is getting more complex since the first games was published. The figures illustrates the expanding of nodes, providing a essential subcomponent of a game. Each node is a complex system.
 
     \subsubsection*{Tools}
+    To tackle the complexity, it helps to have excellent development tools. Sadly, this is not the case. On PC, the compiler development environment like Microsoft Visual Studio is basicly just a wrapper around the C++ compiler. most games are primarly written in C++. The Microsoft Visual Studio is not the best fit, but Visual C++ is the best compiler we have on PCs with no competitive alternatives, so we are just sort of along for the ride. 
+
+    For the console, the life cycle is long and there isnt much motivation for for the tool-maker to improve the products toward the end of the life cycle. Typically, a console developer will be using an environment with only one to four years of maturity. 
+
+    For simulating 3D, the program used was not created for people who make non-realtime animations, so they present a poor fit. Game engines are often big and slow, and they represent somthing very different from what we really need. 
+    Sometimes, for building the geometry of the world, we just write our own domain-specific editors from scratch. 
+
+    Historically, the situation with regard to asset management tools has also been poor.
 
     \subsubsection*{Workflow}
+    It is not only a problem with the tools, but the compile/edit/debuf time is far too long. Many games take half an hour or longer to compile when starting from scratch or when a major C++ header file is changed. 
+
+    Once the build time have grown too long, a team may end up putting a significant amount of work into refactoring their source code to make it build more quickly. Often this happens too late, as the spaghetti of file dependencies has become to svere that fully refactoring it would be akin to reconstructuring the project from scratch. 
+
+    Once the game is compiled, we must run it and test our changes. However, startup times can be very long, since games often need to load large amounts of data. This can cause minutes from a small code is added until it builded and up and running for testing. 
+
 
     \subsubsection*{Multiplatform Development}
+    Many games are developed to run on multiple systems. During development we often have to build the game for all build types for all target platforms (PC, PSP, etc) before committing code to source control. Whenever this is not done, it can cause compile-time or runtime error, disrupting the work of the rest of the programming team - a bad situation. Before a programmer can check in a batch of changes, they may need to perform between two or five full recompiles (which mentioned earlier take a looong time!). The programmer can easily be waiting for hours, so theres a strong motivation to check in code as infrequently as possible. But they cant wait too far out of sync from the official version, causing headaches when it comes time to merge. A puild master can be the soulution. A programmer cant just sit down and get work done; there are significant barriers to push through.  
 
     \subsubsection*{Third-Party Components}
+    It is desireable to be able to leverage third-party products for some of the submodules in a game in order to reduce the workload. 
 
     \subsubsection*{Full-Figure Options}
 
