@@ -28,18 +28,32 @@
     Many games are developed to run on multiple systems. During development we often have to build the game for all build types for all target platforms (PC, PSP, etc) before committing code to source control. Whenever this is not done, it can cause compile-time or runtime error, disrupting the work of the rest of the programming team - a bad situation. Before a programmer can check in a batch of changes, they may need to perform between two or five full recompiles (which mentioned earlier take a looong time!). The programmer can easily be waiting for hours, so theres a strong motivation to check in code as infrequently as possible. But they cant wait too far out of sync from the official version, causing headaches when it comes time to merge. A puild master can be the soulution. A programmer cant just sit down and get work done; there are significant barriers to push through.  
 
     \subsubsection*{Third-Party Components}
-    It is desireable to be able to leverage third-party products for some of the submodules in a game in order to reduce the workload. 
+    It is desireable to be able to leverage third-party products for some of the submodules in a game in order to {\bf reduce the workload}. Licensable third-party modules exist for some of the modules, only some of the third-party products have been successful at meeting industry needs. Available products covers: audio, rendering, scene management, collison detection and physics, etc. It can be difficult to use these third-party components; often the programmer must have a lot of experience in the problem domain in order to understand how to interface with the product successfully. Integrating is also a problem because of complex products with dependencies. Since games are CPU-intensive, it will often happen that the third-party component presents a significant {\bf performance bottleneck} for some scenarios - and the programmer must fix these situations or work around them. Often the third-party code fails, and a lot of work is requires, they might as well have written the module from scratch, something you dont want to find out after failing with the licensed code. {\bf cost/benefit analysis}.
 
     \subsubsection*{Full-Figure Options}
+    Instead of licensing components, we can license an entire game engine. If a company is making a game that is not doing anything new technologically, such a license can be a safe decision. If there is new technologically aspects, a game engine can be a poor fir as describes with third-party components.
+
 
   \section*{Highly Domain-Specific Requirements}
+  Currently there are three levels of programming in games: script code, gameplay code, and engine code. Script and gameplay code control the overall content, rules and high-level behaviour of the game. The engine code provides all the basic mechanisms for simulating IO. Engine code is more complex that gameplay code. 
 
     \subsubsection*{Engine Code}
 
+    When writing enige code, you need to be good at engineering and have a lot of domain-specific knowledge. This can be broken into two categories: {\bf Mathematical Knowledge} and {\bf algorithmic knowledge}. When implementing 3D there is required a lot of linear algebra and geometry (2D and 3D). A good engine programmer should have working familiarity with many algorithms. Most algorithms will be mainly focused on one task area, like rendering or physics, but these are algorithms are often very deep and take a while to master. 
+
     \subsubsection*{Crosscutting Concerns}
+    To successfully build a engine, it is not enough to understand a lot of math and algorithms. It takes a certain experience and wisdom to choose or dicover algorithms that can be combined into a harmonious whole. When a engine fails, it is often because of the harmony. Figure 3 and 4 are complex systems with a lot of crosscutting concerns. Currently we do not have programming paradigms that help us address this fundamental structual problem.
 
     \subsubsection*{Depth of Simulation}
+    Game code is inherently about simulating some kind of world. In early games, the simulations were primitive. For a while we mainly focused on graphics, which is a simulation of how light behaves in the world. But now we are entering a time when the portions of the simulation governing physics and AI ca be more important to the end users quality and experience. Graphics without good AI is bad! When the graphics looks real, the users expects that the world behave as real as well.
+
+    {\bf Stiffness:} the fact that merely by adjusting constraints, you can cause the simulation to become unstable.
+    {\bf Tunneling:} which happens when we integrate across a timestep thats too long, causing us to miss a significant world event. The term tunneling comes from collision detection, where we move entities essentially by teleporting them small distances through space; if we move an entity too quickly, it may pass through a solid object like a wall, unless we take extra steps to detect that situation. Complex problem like $n^{2}$ do not want to be solved in real time. 
 
     \subsubsection*{Profiling}
+    Were always trying to push the CPU as far as we can, so profiling is very important. Unfortunatley, there are no good profilers for games. Some vendors of graphics hardware makes some graphics-specific profiling tools, as do the makers of some game consoles. Those tools are also helpful but generally insufficient to get a birds eye view of the system. 
 
     \subsubsection*{Risk}
+    Computer games have always evolved toward increased technical complexity to give the players things they never have experienced before. Game developers carry a lot of technical risks as well as game design risk. How will the technology interact with the system and how will the feature feel to the end user? Is it worth all this trouble we are taking implement it?
+
+    {\bf GAMES ARE HARD.}
